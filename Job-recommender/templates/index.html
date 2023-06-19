@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job/Skill Recommender Application</title>
+  
+    <link rel="stylesheet" href="../static/css/index-style1.css">
+    <link rel="stylesheet" href="../static/css/index-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "9dacf3a4-a803-43d1-a78c-1a17e3afc132", // The ID of this integration.
+          region: "au-syd", // The region your integration is hosted in.
+          serviceInstanceID: "0f887b02-173f-4aa5-8cd1-2358a051f3f8", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+    
+    <section class="header">
+    <nav>
+        <a href="#"><img src="../static/images/logo (2).png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa" onclick="hideMenu()">close</i>
+            <ul>
+                <li><a href="{{ url_for('index') }}" id="index" name="index">HOME</a></li>
+                <li><a href="{{ url_for('search1') }}" id="search1" name="search1">SEARCH</a></li>
+                <li><a href="{{ url_for('companies') }}" id="companies" name="companies">COMPANIES</a></li>
+              
+                
+                <li><a href="{{ url_for('contact') }}" id="contact" name="contact">CONTACT</a></li>
+                
+            </ul>
+        </div>
+        <i class="fa" onclick="ShowMenu()" >menu</i>
+    </nav>
+    <div class="tex-box">
+        <h1>SKILL/JOB RECOMMENDER</h1>
+        <p>Be aware of current job openings, <br>Get your desired job
+        </p>
+        
+    </div>
+    </section>
+    
+
+    <!--course-->
+    <h1 style="padding: 2%;padding-left:30%">RECOMMENDED JOBS FOR YOU</h1>
+    <section class="job-slider">
+      
+            
+            <main>
+                <div class="slide-container">
+                <img id="slide-left" class="arrow" src="../static/images/arrow-left.jpg">
+            <section class="container" id="slider">
+                
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/leadsoc.jpg" alt="">
+                    <div class="job-details">
+                        <h2> Embedded Engineer | leadsoc | Bangalore  </h2>
+                        <p>Job Role: Embedded Engineer<br> Company: leadsoc<br>Job Location: Bangalore <br>Experience: 0-1 years<br>CTC: 3-4 LPA</p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/leadsoc%20technologies.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/tracxn.jpg" alt="">
+                    <div class="job-details">
+                        <h2> Google Workspace developer | tracxn | Chennai  </h2>
+                        <p>Job Role: Google Workspace developer<br>Company: tracxn<br>Job Location: Chennai <br>Experience: 5-6 years<br>CTC: 10-15 LPA </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/tracxn.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/quadrant.jpg" alt="">
+                    <div class="job-details">
+                        <h2> Web Data Analyst | quadrant | Chennai  </h2>
+                        <p>Job Role: Web Data Analyst<br> Company: quadrant<br>Job Location: Chennai <br>Experience: 1-3 years<br>CTC: 10 LPA
+                        </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/quadrant%20technology.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/quest.jpg" alt="">
+                    <div class="job-details">
+                        <h2> Power Electronics Engineer | Quest Global | Bangalore  </h2>
+                         <p>Job Role: Power Electronics Engineer <br> Company: Quest Global<br>Job Location: Bangalore<br>Experience: 0-1 years<br>CTC: 3-4 LPA </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/quest%20global.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/citiustech.jpg" alt="">
+                    <div class="job-details">
+                        <h2> Java software developer | citiustech | Bangalore,Mumbai </h2>
+                        <p>Job Role: Java software developer<br>Company: citiustech<br>Job Location: Bangalore,Mumbai <br>Experience: 0-5 years<br>CTC: 10 LPA
+                        </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/citiustech.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/ats business sol.jpg" alt="">
+                    <div class="job-details">
+                        <h2>Full stack java developer | ATG Business Solutions | Bangalore,Mumbai </h2>
+                        <p>Job Role:Full stack java developer<br>Company: ATG Business Solutions<br>Job Location: Bangalore,Mumbai <br>Experience: 1-3 years<br>CTC: 8.5 LPA
+                        </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/ATG.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/codify.jpg" alt="">
+                    <div class="job-details">
+                        <h2>Backend developer-Java/python/mongoDB | codify | Chennai </h2>
+                        <p>Job Role:Backend developer-Java/python/mongoDB<br>Company: codify<br>Job Location: Chennai<br>Experience: 0-1 years<br>CTC: 3.5-5 LPA
+                        </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/codifyd.html">view details</a>
+                    </div>
+                </div>
+        
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/siemens.jpg" alt="">
+                    <div class="job-details">
+                        <h2>C developer| siemens | Chennai </h2>
+                        <p>Job Role:C developer<br>Company: siemens<br>Job Location: Chennai<br>Experience: 0-1 years<br>CTC: 4-6 LPA
+                        </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/siemens.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/transunion.jpg" alt="">
+                    <div class="job-details">
+                        <h2>C/C++ developer| transunion | Chennai </h2>
+                        <p>Job Role:C/C++ developer<br>Company: transunion<br>Job Location: Chennai<br>Experience: 0-3 years<br>CTC: 6 LPA
+                        </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/Transunion.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/ael dta.jpg" alt="">
+                    <div class="job-details">
+                        <h2>Python developer| AEL data solutions | Chennai </h2>
+                        <p>Job Role:Python developer<br>Company: AEL data solutions<br>Job Location: Chennai<br>Experience: 1-2 years<br>CTC: 4 LPA
+                        </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/ael%20data%20services.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/majorel.jpg" alt="">
+                    <div class="job-details">
+                        <h2>Python developer | majorel | Bangalore </h2>
+                        <p>Job Role:Python developer<br>Company: majorel<br>Job Location: Bangaloe<br>Experience: 1-2 years<br>CTC: 3-8 LPA
+                        </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/majorel.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/boeing.jpg" alt="">
+                    <div class="job-details">
+                        <h2>Associate software engineer-Full stack | Boeing | Bangalore </h2>
+                        <p>Job Role:Associate software engineer-Full stack<br>Company: Boeing<br>Job Location: Bangaloe<br>Experience: 0 years<br>CTC: 3-5 LPA
+                        </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/boeing.html">view details</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/bnp paribas.jpg" alt="">
+                    <div class="job-details">
+                        <h2>SQL developer | BNP Paribas | Chennai </h2>
+                        <p>Job Role:SQL developer<br>Company: BNP Paribas<br>Job Location: Chennai<br>Experience: 1-2 years<br>CTC: 7-15 LPA
+                        </p>
+                        <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/sprint-3/bnp%20paribas.html">view details</a>
+                    </div>
+                </div>
+
+                {{msg}}
+         
+        {% for row in jobs %}
+        <div class="thumbnail">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/com%20img.jpg" alt="">
+            
+            <div class="job-details">
+                <h2> {{row["keywords"]}} </h2>
+                <p>Job Role: {{row["jobrole"]}}<br>Company:{{row["company"]}}<br>Job Location: {{row["location"]}} <br>Experience: {{row["experience"]}}<br>CTC:{{row["ctc"]}}</p>
+                <a href="#">view details</a>
+            </div>
+        </div>
+        {% endfor %}
+
+
+        
+        
+                
+                
+            </section>
+            <img id="slide-right" class="arrow" src="../static/images/arrow-right.jpg">
+        </div>
+        </main>
+            
+        
+            <script src="../static/js/index-script.js"></script>
+        
+    </section>
+
+<!---campus-->
+    <section class="campus"><h1>TOP MULTI-NATIONAL COMPANIES IN INDIA</h1>
+    <p>MNCs have thrived in India in the last few years because of the easily available and stable workforce. Potential, capability and India's fastest growing economy are some other major reasons why multinational companies are coming to India to extend their business.</p>
+        <div class="row" >
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/ibm.jpg">
+            
+            <div class="layer">
+               <h3>IBM</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/google.jpg">
+            <div class="layer">
+               <h3>GOOGLE</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/hcl.jpg">
+            <div class="layer">
+               <h3>HCL</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/accenture.jpg">
+            <div class="layer">
+               <h3>ACCENTURE</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/microsoft.jpg">
+            <div class="layer">
+               <h3>MICROSOFT</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/wipro.jpg">
+            <div class="layer">
+               <h3>WIPRO</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/tcs.jpg">
+            <div class="layer">
+               <h3>TCS</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/infosys.jpg">
+            <div class="layer">
+               <h3>INFOSYS</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/amazon.jpg">
+            <div class="layer">
+               <h3>AMAZON</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/cognizant.jpg">
+            <div class="layer">
+               <h3>COGNIZANT</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/dell.jpg">
+            <div class="layer">
+               <h3>DELL</h3>
+            </div>
+        </div>
+        <div class="campus-col">
+            <!--<img src="images/wipro.jpg">
+            <div class="layer">
+               <h3>WIPRO</h3>
+            </div>-->
+        </div>
+    </div>
+    
+    </section>  
+    
+    <!--facilities-->
+    <section class="facilities">
+        <h1>CAREER ADVICE</h1>
+        <p>Finding a job is easier said than done. While you may know to submit a professional résumé, write a thoughtful cover letter and practice before an interview, sometimes you still don't get the job.
+
+            While every job-search experience is different, it's helpful to hear from others who are in or have been in the same boat as you. Here, experts and past job seekers share some of their best advice for landing your dream role:</p>
+            <div class="row">
+            <div class="facilities-col">
+                <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/files/careeradvice1.html">
+                <img src="../static/images/career1.jpg" ></a>
+                <h3>Tips fot technical interview</h3>
+                <p>Got an invite for your first coding interview? Yes? Then, you’re up for a very exhausting yet exciting technical interview process of your life. Firsts are always memorable – for good or worse. Like many others, you can look up the best tricks and tips to crack your first technical interview but only when you’re equipped with the right mindset, you’ll be able to pass the coding interview rounds with flying colors.
+                </p>
+            </div>
+            <div class="facilities-col">
+                <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/files/careeradvice2.html">
+                    <img src="../static/images/career2.jpg" ></a>
+                <h3>How to answer in an interview? What makes you unique?</h3>
+                <p>Hiring managers interview many candidates for each job, so they want to hear what makes you unique from the other candidates.And if you don’t have an impressive, confident answer, it can cost you the opportunity.Coming up, we’ll look at how to answer this question to impress a hiring manager, including word-for-word sample interview answers.
+                    
+                </p>                    
+            </div>
+            <div class="facilities-col">
+                <a href="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/files/careeradvice3.html">
+                    <img src="../static/images/career3.jpg" ></a>
+                <h3>How to enjoy your work?</h3>
+                <p>Before you start looking for greener career pastures, try these tips for maintaining a happy outlook on the job.If you find yourself longing for greener work pastures, don't immediately go looking for the first exit ramp off of your chosen career path.
+
+
+                </p>
+            </div>
+         </div>
+    </section>
+    <!--testimonials-->
+    <section class="testimonials"><h1>What our users says</h1>
+    <p>.</p>
+    <div class="row">
+        <div class="testimonial-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/job.jpg">
+            <div>
+                <p>It is one of the best platform for the people who are seeking for a good job. It helps people to move forward in all aspects. It recommendes large number of opportunities for the jobseekers.</p>
+                <h3>Raghul</h3>
+                <!--<i class="fa fa-star" aria-hidden="true"></i>-->
+            </div>
+        </div>
+        <div class="testimonial-col">
+            <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/job1.jpg">
+            <div>
+                <p>This is a very good platform for jobseekers. Easy to use and easy to apply for jobs.I will recommend strongly to use this web application. </p>
+                <h3>Ramya</h3>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+
+    <!--call to action-->
+    <section class="cta">
+        <h1>Are you a recruiter? <br>Looking for hiring candidates for a particular job role?<br>You can post new job vacancies here...</h1>
+        <a href="{{ url_for('postjob') }}" class="hero-btn">POST JOB</a>
+    </section>
+    
+
+    <!--Footer-->
+    <section class="footer">
+        <h1>OUR TEAM</h1>
+        <!--icons facebook twitter insta inkedin-->
+        <div class="row">
+            <div class="team-col">
+                
+               
+                <h3>Sherly.J</h3>
+            </div>   
+            <div class="team-col">
+                
+                    
+                <h3>Nandhini.K</h3>
+                                    
+            </div>
+            <div class="team-col">
+              
+                    
+                <h3>Swetha.M</h3>
+                
+            </div>
+            <div class="team-col">
+                
+            <h3>Sivaranjani.P</h3>
+                                
+        </div>
+        </div>
+
+    </section>
+
+
+    <!--javascript for toggle menu-->
+    <script>
+        var navLinks=document.getElementById("navLinks");
+        function ShowMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+    </script>
+</body>
+</html>

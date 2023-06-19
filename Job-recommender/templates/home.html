@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Home page</title>
+
+</head>
+
+<body>
+
+
+<main>
+    <div class="intro" >
+      <h1>JOB HUNT</h1>
+  
+      <p>"Find your dream job"</p>
+      <a href="{{ url_for('signup') }}" class="button2" name = "signup">Signup</a>
+      <div class="space"> </div>
+      <a href="{{ url_for('login1') }}" class="button2" name = "login">Login</a>
+      
+    </div>
+    
+    <div class="about-me">
+      <div class="about-me-text">
+        <h2>Team ID</h2>
+        <p>PNT2022TMID29840</p>
+        <h2>Project Title</h2>
+        <p>Skill/Job Recommender Application</p>
+    </div>
+</main>
+
+
+</body>
+</html>

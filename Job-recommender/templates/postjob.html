@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/postjob.css">
+    <title>Post Jobs</title>
+</head>
+<body >
+    <h1>POST JOBS</h1>
+    <div class="Postjob-form">
+
+
+        <form action = "{{ url_for('addrec') }}" method = "POST">
+            <p>Keywords(about job)</p>
+            <input type="text" name="keywords" placeholder="Keywords">
+            <p>Job Role</p>
+            <input type="text" name="jobrole" placeholder="Job Role">
+            <p>Company</p>
+            <input type="text" name="company" placeholder="Company">
+            <p>Location</p>
+            <input type="text" name="location" placeholder="Location">
+            <p>Experience</p>
+            <input type="text" name="experience" placeholder="Experience">
+            <p>CTC</p>
+            <input type="text" name="ctc" placeholder="CTC">
+            <p>Job Description</p>
+           <textarea type="" name="job description" placeholder="Job Description" ></textarea><br>
+            <input type="submit" value="submit">
+
+
+        </form>
+    </div>
+</body>
+</html>

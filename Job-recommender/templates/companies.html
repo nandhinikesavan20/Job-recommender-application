@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies</title>
+    <link rel="stylesheet" href="../static/css/companies-style.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="#"><img src="../static/images/logo (2).png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa" onclick="hideMenu()">close</i>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" id="index" name="index">HOME</a></li>
+                    <li><a href="{{ url_for('search1') }}" id="search1" name="search1">SEARCH</a></li>
+                    <li><a href="{{ url_for('companies') }}" id="companies" name="companies">COMPANIES</a></li>
+                    
+                    <li><a href="{{ url_for('contact') }}" id="contact" name="contact">CONTACT</a></li>
+                    
+                </ul>
+            </div>
+            <i class="fa" onclick="ShowMenu()" >menu</i>
+        </nav>
+    </section>
+
+    <!--"company-->
+    <section class="company"><h1>TOP MNC'S IN INDIA</h1>
+        <p> .</p>
+        <div class="row">
+            <div class="company-col">
+                <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/ibm.jpg">
+                <div class="layer">
+                   <h3>IBM</h3>
+                </div>
+            </div>
+            <div class="company-col">
+                <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/microsoft.jpg">
+                <div class="layer">
+                   <h3>MICRO SOFT</h3>
+                </div>
+            </div>
+            <div class="company-col">
+                <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/google.jpg">
+                <div class="layer">
+                   <h3>GOOGLE</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="company-col">
+                <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/tcs.jpg">
+                <div class="layer">
+                   <h3>TCS</h3>
+                </div>
+            </div>
+            <div class="company-col">
+                <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/infosys.jpg">
+                <div class="layer">
+                   <h3>INFOSIS</h3>
+                </div>
+            </div>
+            <div class="company-col">
+                <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/amazon.jpg">
+                <div class="layer">
+                   <h3>AMAZON</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="company-col">
+                <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/cognizant.jpg">
+                <div class="layer">
+                   <h3>COGNIZANT</h3>
+                </div>
+            </div>
+            <div class="company-col">
+                <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/dell.jpg">
+                <div class="layer">
+                   <h3>DELL</h3>
+                </div>
+            </div>
+            <div class="company-col">
+                <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/wipro.jpg">
+                <div class="layer">
+                   <h3>WIPRO</h3>
+                </div>
+            </div>
+
+        </div>
+            <div class="row">
+                <div class="company-col">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/accenture.jpg">
+                    <div class="layer">
+                       <h3>ACCENTURE</h3>
+                    </div>
+                </div>
+                <div class="company-col">
+                    <img src="https://jobhuntbucket.s3.jp-tok.cloud-object-storage.appdomain.cloud/Object%20Storage/sprint-2/hcl.jpg">
+                    <div class="layer">
+                       <h3>HCL</h3>
+                    </div>
+                </div>
+                
+            </div>
+        
+        
+        </section> 
+
+
+
+    <!--javascript for toggle menu-->
+    <script>
+        var navLinks=document.getElementById("navLinks");
+        function ShowMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+    </script>
+    
+</body>
+</html>

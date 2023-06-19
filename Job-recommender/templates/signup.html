@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/signup.css') }}">
+<title>Signup</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="form">
+      <div class="btn">
+        <button class="signUpBtn">SIGN UP</button>
+        <button class="loginBtn" > <a href="{{ url_for('login1') }}">LOGIN</a></button>
+      </div>
+      <form class="signUp" action="{{ url_for('index') }}"  name="index" method="get">
+        <div class="formGroup">
+          <input type="text" id="userName" placeholder="USER NAME" autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input type="email" placeholder="EMAIL ID" name="email" required autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input type="password" id="password" placeholder="PASSWORD" required autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input type="password" id="confirmPassword" placeholder="CONFIRM PASSWORD" required autocomplete="off">
+        </div>
+       
+        <div class="formGroup">
+          <button type="submit" class="btn2">REGISTER</button>
+        </div>
+ 
+      </form>
+        
+      <!------ Login Form -------- -->
+      <form class="login" action="{{ url_for('index') }}"  name="index" method="get">
+        
+        <div class="formGroup">
+          <input type="email" placeholder="Email ID" name="email" required autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input type="password" id="password" placeholder="Password" required autocomplete="off">
+         
+        </div>
+        
+        <div class="formGroup">
+          <button type="submit" class="btn2">LOGIN</button>
+        </div> 
+ 
+      </form>
+ 
+    </div>
+</div>
+ 
+</body>
