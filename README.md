@@ -1,6 +1,5 @@
  
-JOB RECOMMENDER APPLICATION
-
+JOB RECOMMENDER APPLICATION:
      Job recommendation application with intelligence of chatbot. 
 In this system, we demonstrate a chatbot that uses Artificial Intelligence to produce dynamic responses to online client enquiries.
 This web-based platform provides a vast intelligent base that can help humans to solve problems. 
